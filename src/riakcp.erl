@@ -31,8 +31,7 @@ exec(FunctionName, Args, Timeout) ->
         ?POOL_NAME,
         fun (Worker) ->
             erlang:apply(riakc_pb_socket, FunctionName, [Worker|Args])
-        end,
-        Timeout).
+        end).
 
 
 
